@@ -1,0 +1,97 @@
+@import url(http://fonts.googleapis.com/css?family=Gafata);
+
+body {
+    font-family: "Gafata", "Helvetica", "Serif";
+    margin: 0px;
+}
+
+/* General */
+.column {
+     float: left;
+}
+
+.btn {
+    height: 40px;
+    display: inline-block;
+}
+.btn img {
+    height: 100%;
+}
+
+
+/* Header and footer */
+
+header, footer {
+    height: 50px;
+    padding-right: 40px;
+    padding-left: 40px;    
+    background: #242b35;
+}
+
+header .logo {
+    text-decoration: none;
+    font-size: 2.5em;
+    color:white;
+}
+
+footer p{
+    color: white;
+    text-align: center;
+    padding-top:15px;
+}
+
+
+
+/* featured */
+
+.featured {
+    background: #00c8d7;  
+    height: 300px;
+    padding:40px;      
+}
+
+.featured .description, .featured .picture {
+    height: 100%;
+    width: 50%;
+}
+
+.featured .description {
+    color: white;
+}
+
+.featured .description h1 {
+    font-size: 2.5em;
+}
+
+.featured .description p {
+    font-size: .9em;
+}
+
+.featured .picture {
+    text-align: center;
+}
+
+.featured .picture img{
+    height: 100%;    
+}
+
+/* features */
+.features {
+    height: 150px;
+    padding: 40px;
+}
+
+.features .column {
+    width: 33.33%;
+    text-align: center;
+    color: #14181b;        
+}
+.features .column h1 img {
+    height: 24px;
+}
+.features .column p {
+    font-size: .9em;
+    padding: 5px;    
+}
+
+

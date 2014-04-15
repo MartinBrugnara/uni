@@ -1,0 +1,100 @@
+@import url(http://fonts.googleapis.com/css?family=Lily+Script+One);
+
+body {
+    font-family: "Arial", "Helvetica", "Serif";
+    margin: 0px;
+}
+
+
+header{
+    height: 50px;
+    padding : 5px;
+}
+    
+.logo {
+    font-family: "Lily Script One";
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.logo img{
+    display: inline;
+    height: 100%;
+}
+
+.container {
+    display: block;
+    
+    width: 100%;    
+    min-height: 300px;
+    position: relative;
+}
+
+.container .side-bar{
+    background: #efefef;
+    position: absolute;
+    right: 0;
+    width: 300px;
+    padding: 5px;
+    min-height: 400px;
+    
+}
+.container .main-bar{            
+    margin-right: 340px;
+    padding: 5px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    margin: 0;
+    
+    width: 100%;
+    padding: 5px;
+    border-top: 1px solid black;
+    background: #A8E9FF;
+    
+    text-align: center;
+}
+
+/* item list */
+.items {
+    list-style: none;
+    padding: 0;
+}
+
+.items li {
+    background: #efefef;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.items li:hover {
+    background: #b4ecff;
+}
+
+.items li.selected {
+    background: #82dbf8;
+}
+
+.items li .details, .items li .preview{
+    display: inline-block;
+    height: 100%;
+}
+.items li .preview {
+    width: 40px;
+}
+.items li .preview img {
+    width: 100%;
+}
+
+.items li .details  a{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn-remove{
+    float: right;
+}
+
+

@@ -1,0 +1,1493 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	
+	<title>Scrum and XP from the Trenches</title>
+    
+	
+	<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="copyright" content="&copy; 2006 C4Media" />
+
+<meta name="google-site-verification" content="0qInQx_1WYOeIIbxnh7DnXlw1XOxNgAYakO2k4GhNnY" />
+<meta name="msapplication-TileColor" content="#ffffff"/>
+<meta name="msapplication-TileImage" content="/styles/i/logo.jpg"/>
+<meta property="wb:webmaster" content="3eac1729a8bbe046" />
+
+		
+	
+	<link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" type="text/css" media="screen" href="http://cdn3.infoq.com/styles/site.css?20140322"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="http://cdn4.infoq.com/styles/site_en.css?20140322"/>
+    <link rel="image_src" href="http://cdn3.infoq.com/styles/i/logo-big.jpg" />
+    <link rel="shortcut icon" href="http://cdn4.infoq.com/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="http://cdn4.infoq.com/apple-touch-icon.png" />
+	
+	<link rel="stylesheet" href="http://cdn2.infoq.com/scripts/ui/jquery.jscrollpane.css" type="text/css" />
+
+	
+	<script src="/scripts/__hd.ifq?hdt=11LcojrDCLpEdcOJ"></script>
+
+    <script type="text/javascript">
+        var InfoQConstants = {};
+        InfoQConstants.language = 'en';
+        InfoQConstants.countryCode = '';
+    </script>
+    <script type="text/javascript" src="http://cdn1.infoq.com/scripts/combinedJs.js?20110704"></script>
+        <script type="text/javascript">
+            
+                var JSi18n = JSi18n || {}; // define only if not already defined
+                JSi18n.error='Error';
+                JSi18n.login_unverifiedAccount='Unverified account';
+                JSi18n.contentSummary_showPresentations_1='';
+                JSi18n.contentSummary_showPresentations_2='';
+                JSi18n.contentSummary_showPresentations_3='';
+                JSi18n.contentSummary_showInterviews_1='';
+                JSi18n.contentSummary_showInterviews_2='';
+                JSi18n.contentSummary_showInterviews_3='';
+                JSi18n.contentSummary_showMinibooks_1='';
+                JSi18n.contentSummary_showMinibooks_2='';
+                JSi18n.login_sendingRequest='Sending request ...';
+                JSi18n.bookmark_saved='<q>&nbsp;&nbsp;&nbsp;Saved&nbsp;&nbsp;&nbsp;&nbsp;</q>';
+                JSi18n.bookmark_error='<q style=color:black;>&nbsp;&nbsp;&nbsp;Error&nbsp;&nbsp;&nbsp;&nbsp;</q>';
+                JSi18n.categoryManagement_showpopup_viewAllLink_viewAllPrefix='View All';
+                JSi18n.categoryManagement_showpopup_viewAllLink_viewAllSuffix='';
+                JSi18n.categoryManagement_showpopup_includeExcludeLink_Exclude='Exclude';
+                JSi18n.categoryManagement_showpopup_includeExcludeLink_Include='Include';
+                JSi18n.login_invalid_email='Please specify a valid email';
+                JSi18n.login_email_not_found = 'No user found with that email';
+            
+        </script>
+    <script type="text/javascript">
+        function createOverFunction(i) {
+            var pixels = i * 129;
+            return function() {
+            	$('#personas_' + i).addClass('selected');
+                $('ul.menu > li .top_submenu.c' + i).css('left','-' + pixels + 'px');
+            }
+        };
+        function createOutFunction(i) {
+            return function() {
+                $('ul.menu > li .top_submenu.c' + i).css('left','-999em');
+                $('#personas_' + i).removeClass('selected');
+            }
+        }
+        $(function() {
+            for (var i = 0; i < 5; i++) {
+                $('ul.menu > li').has('.top_submenu.c' + i).hoverIntent({
+                    sensitivity: 15,
+                    interval: 150,
+                    timeout:200,
+                    over: createOverFunction(i),
+                    out: createOutFunction(i)
+                });
+            }
+        });
+    </script>
+	
+
+
+
+
+
+
+
+<script type='text/javascript'>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+	var gads = document.createElement('script');
+	gads.async = true;
+	gads.type = 'text/javascript';
+	var useSSL = 'https:' == document.location.protocol;
+	gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+	var node = document.getElementsByTagName('script')[0];
+	node.parentNode.insertBefore(gads, node);
+})();
+
+
+googletag.cmd.push(function() {
+	googletag.defineSlot('/5286733/en_geo_banner_bottom', [728, 90], 'id_geo_banner_ad').addService(googletag.pubads());
+	googletag.defineSlot('/5286733/en_300x250_banner_top', [300, 250], 'id_300x250_banner_top').addService(googletag.pubads());
+	googletag.defineSlot('/5286733/en_300x250_banner_bottom', [300, 250], 'id_300x250_banner_bottom').addService(googletag.pubads());
+	googletag.defineSlot('/5286733/en_textlink1', [250, 60], 'id_ad_textlink1').addService(googletag.pubads());
+	googletag.defineSlot('/5286733/en_textlink2', [250, 60], 'id_ad_textlink2').addService(googletag.pubads());
+	googletag.defineSlot('/5286733/en_textlink3', [250, 60], 'id_ad_textlink3').addService(googletag.pubads());
+/*	googletag.defineSlot('/5286733/en_textlink4', [120, 100], 'id_ad_textlink4').addService(googletag.pubads());
+	googletag.defineSlot('/5286733/en_textlink5', [120, 100], 'id_ad_textlink5').addService(googletag.pubads());*/
+	googletag.defineSlot('/5286733/en_300x250_category', [300, 250], 'id_300x250_category').addService(googletag.pubads());
+	googletag.defineSlot('/5286733/en_300x250_banner_searchResults', [300, 250], 'id_300x250_banner_searchResults').addService(googletag.pubads());
+	googletag.pubads().enableSingleRequest();
+	googletag.pubads().collapseEmptyDivs();
+	googletag.enableServices();
+});
+</script>
+
+
+	
+	
+<script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()])</script>
+	
+	<meta property="og:image" content="/resource/minibooks/scrum-xp-from-the-trenches/en/cover/ScrumAndXpFromTheTrenchesonline250x355.JPG"/>
+	<link rel="image_src" href="/resource/minibooks/scrum-xp-from-the-trenches/en/cover/ScrumAndXpFromTheTrenchesonline250x355.JPG"/>
+	<meta name="keywords" content="scrum xp from the trenches,Process &amp; Practices,Collaborative Technologies,XP,Introducing Agile,Distributed Teams,Collaboration,Scrum,Agile in the Enterprise,Pair Programming,Stories &amp; Case Studies,Agile Techniques,Teamwork,Agile,"/>
+	<meta name="description" content="For those getting started with Agile, this book offers a detailed first-person account of how one Swedish company implemented Scrum and XP with a distributed team of 40 people, and how they continuously improved their process over a year’s time."/>
+	<meta name="tprox" content="1182968280000" />
+
+
+	<meta property="og:image" content="http://cdn2.infoq.com/styles/i/logo-big.jpg"/>
+</head>
+
+<body >
+
+
+	<div class="intbt">
+		<a href="/int/bt" title="bt">BT</a>
+	</div>
+
+
+<div id="wrapper" style="background-color:#fff">
+	<!--	#######		SITE START	#########	 -->
+	<div id="site">
+		
+
+
+
+
+
+
+
+
+
+<div id="topInfo">
+    <ul class="list1">
+        <li><a href="/aboutus" title="About Us">About Us</a></li>
+        
+        	<li><a href="/aboutyou" title="About You">About You</a></li>
+        
+        <li><a href="/contribute" title="Our Contributor Team">Our Contributor Team</a></li>
+        
+        	<li><a href="/purpose" title="Purpose Index">Purpose Index</a></li>
+        
+        
+            
+    </ul>
+    <ul class="list2">
+        <li>Exclusive updates on:</li>
+        
+	        <li><a href="http://twitter.com/infoq" target="_blank"><img src="http://cdn2.infoq.com/styles/i/twitter.jpg" alt="" border="0" /></a></li>
+	        <li><a href="http://www.facebook.com/InfoQ" target="_blank"><img src="http://cdn4.infoq.com/styles/i/facebook.jpg" alt="" border="0" /></a></li>
+	        <li><a href="http://www.linkedin.com/company/InfoQ" target="_blank"><img src="http://cdn1.infoq.com/styles/i/linkedin.gif" alt="" border="0" /></a></li>
+	        
+	        
+	        	<li><a href="https://plus.google.com/104892343728609932454" target="_blank" rel="publisher"><img src="http://cdn2.infoq.com/styles/i/social/gplus-16.png" alt="" border="0" /></a></li>
+       		
+       		
+        
+        
+        <li><a id="headerRssLink" href="#" title="" target="_blank"><img src="http://cdn3.infoq.com/styles/i/rss.jpg" alt="" border="0" /></a></li>
+    </ul>
+	<div class="clear"></div>
+</div>
+
+	
+<!--	#######		HEADER START	#########	 -->
+<div id="header">
+    <div class="top_explain">Facilitating the spread of knowledge and innovation in professional software development</div>
+	<!--	#######		search	#########	 -->
+	<div class="search_cls">
+	
+		<form name="search" id="search" action="/search.action" method="get" enctype="multipart/form-data">
+			<fieldset>
+				<input type="text" id="keyword" name="queryString" class="searchInput" value="Search" onfocus="if(this.value=='Search'){ this.value = ''; }" onblur="if(this.value==''){ this.value = 'Search'; }" />
+				<input type="hidden" id="page" name="page" value="1"/>
+                <input type="hidden" id="searchOrder" size="15" name="searchOrder">
+				<input type="submit" value="" id="search" class="submitCls" />
+			</fieldset>
+		</form>
+		
+	    
+
+
+
+
+
+
+
+
+<!--	#######		login	#########	 -->
+
+
+	<div id="login">
+		<a class="login_btn" href="#" onclick="return false;" title="Login">
+			<span>Login</span>
+		</a>
+	</div>
+
+
+		
+	</div>
+	
+	<div class="clear"></div>
+	
+	<!--	#######		logo	#########	 -->
+	<div class="logo">
+		<a class="image" href="/" title="">
+            <img src="http://cdn1.infoq.com/styles/i/logo_bigger.jpg" alt="" border="0" />
+        </a>
+		<div class="clear"></div>
+	    
+
+
+
+
+
+
+
+
+<ul class="langs">
+	<li><a class="active" href="#" onclick="return false;" title="InfoQ English">En</a> |</li>
+	<li><a href="/cn/">中文</a> |</li>
+	<li><a href="/jp/">日本</a> |</li>
+    <li><a href="/fr/">Fr</a> |</li>
+	<li><a href="/br/">Br</a></li>
+</ul>
+<div class="clear"></div>
+<p>
+    
+	
+	    
+	    
+	959,935 Mar unique visitors
+</p>
+
+		<div class="clear"></div>
+	</div>
+	
+    	
+
+
+
+
+
+
+
+
+		<!--	#######		menu	#########	 -->
+		<ul class="menu" id="mainmenu">
+			<li id="personas_0">
+				<a class="main" href="/development/" title="Development"><span>Development</span></a>
+				<div class="top_submenu c0">
+					<div class="scroll-pane">
+						<ul class="top_submenu_links">
+				              <li><a class="featured" href="/java/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Java">Java</a></li>
+				              <li><a class="featured" href="/dotnet/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title=".Net">.Net</a></li>
+				              <li><a href="/cloud-computing/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Cloud">Cloud</a></li>
+				              <li><a class="featured" href="/mobile/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Mobile">Mobile</a></li>
+				              <li><a href="/HTML5Topic/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="HTML5">HTML5</a></li>
+				              <li><a href="/javascript/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="JavaScript">JavaScript</a></li>
+				              <li><a href="/ruby/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Ruby">Ruby</a></li>
+				              <li><a href="/dsl/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="DSLs">DSLs</a></li>
+				              <li><a href="/python/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Python">Python</a></li>
+				              <li><a class="featured" href="/Topic_PHP/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="PHP">PHP</a></li>
+				              <li><a class="featured" href="/api/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="API">API</a></li>
+							  <!-- <li><a class="more" href="#" title="">+ More topics</a></li> -->
+						</ul>
+					</div>
+					
+					<div class="menu_article">
+						<h2>Featured in <span id="developmentHDLabel"></span></h2>
+						<h3 id="developmentHDTitle"></h3>
+						<div class="clear"></div>
+						<p>
+							<img id="developmentHDImg" src="" alt="" border="0" />
+							<span id="developmentHDSummary"></span>
+						</p>
+						<div class="clear"></div>	
+						<div class="alignCenter">
+							<a class="view_all_categ" href="/development/">
+								<span>All in <b id="developmentHDLabel2">Development</b></span>
+							</a>
+						</div>
+						<div class="clear"></div>	
+					</div>
+					
+					<div class="clear"></div>
+				</div>
+			</li>
+			
+			<li id="personas_1">
+				<a class="main" href="/architecture-design/" title="Architecture &amp; Design"><span>Architecture<br/>&amp; Design</span></a>
+				<div class="top_submenu c1">
+					<div class="scroll-pane">
+						<ul class="top_submenu_links">
+							  <li><a class="featured" href="/architecture/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Architecture">Architecture</a></li>
+				              <li><a href="/Modeling/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Modeling">Modeling</a></li>
+				              <li><a href="/performance-scalability/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Scalability/Performance">Scalability/Performance</a></li>
+				              <li><a href="/domain-driven-design/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="DDD">DDD</a></li>
+				              <li><a href="/Behavior-Driven-Development/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="BDD">BDD</a></li>
+				              <li><a href="/AOP/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="AOP">AOP</a></li>
+				              <li><a href="/DesignPattern/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Patterns">Patterns</a></li>
+				              <li><a href="/Security/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Security">Security</a></li>
+				              <li><a href="/cloud-computing/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Cloud">Cloud</a></li>
+				              <li><a href="/soa/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="SOA">SOA</a></li>
+							  <!-- <li><a class="more" href="#" title="">+ More topics</a></li> -->
+						</ul>
+					</div>
+					
+					<div class="menu_article">
+						<h2>Featured in <span id="architecture-designHDLabel"></span></h2>
+						<h3 id="architecture-designHDTitle"></h3>
+						<div class="clear"></div>
+						<p>
+							<img id="architecture-designHDImg" src="" alt="" border="0" />
+							<span id="architecture-designHDSummary"></span>
+						</p>
+						<div class="clear"></div>	
+						<div class="alignCenter">
+							<a class="view_all_categ" href="/architecture-design/">
+								<span>All in <b id="architecture-designHDLabel2">Architecture &amp; Design</b></span>
+							</a>
+						</div>
+						<div class="clear"></div>	
+					</div>
+					
+					<div class="clear"></div>
+				</div>
+			</li>
+			<li id="personas_2">
+				<a class="main" href="/process-practices/" title="Process &amp; Practices"><span>Process &amp; Practices</span></a>
+				<div class="top_submenu c2">
+					<div class="scroll-pane">
+						<ul class="top_submenu_links">
+				              <li><a class="featured" href="/agile/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Agile">Agile</a></li>
+				              <li><a href="/Leadership/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Leadership">Leadership</a></li>
+				              <li><a href="/team-collaboration/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Collaboration">Collaboration</a></li>
+				              <li><a href="/agile_techniques/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Agile Techniques">Agile Techniques</a></li>
+				              <li><a href="/methodologies/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Methodologies">Methodologies</a></li>
+				              <li><a href="/continuous_integration/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Continuous Integration">Continuous Integration</a></li>
+				              <li><a href="/lean/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Lean/Kanban">Lean/Kanban</a></li>
+							  <!-- <li><a class="more" href="#" title="">+ More topics</a></li> -->
+						</ul>
+					</div>
+					
+					<div class="menu_article">
+						<h2>Featured in <span id="process-practicesHDLabel"></span></h2>
+						<h3 id="process-practicesHDTitle"></h3>
+						<div class="clear"></div>
+						<p>
+							<img id="process-practicesHDImg" src="" alt="" border="0" />
+							<span id="process-practicesHDSummary"></span>
+						</p>
+						<div class="clear"></div>	
+						<div class="alignCenter">
+							<a class="view_all_categ" href="/process-practices/">
+								<span>All in <b id="process-practicesHDLabel2">Process &amp; Practices</b></span>
+							</a>
+						</div>
+						<div class="clear"></div>	
+					</div>
+					
+					<div class="clear"></div>
+				</div>
+			</li>
+			<li id="personas_3">
+				<a class="main" href="/operations-infrastructure/" title="Operations &amp; Infrastructure"><span>Operations &amp; Infrastructure</span></a>
+				<div class="top_submenu c3">
+					<div class="scroll-pane">
+						<ul class="top_submenu_links">
+				              <li><a class="featured" href="/hadoop/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Hadoop">Hadoop</a></li>
+				              <li><a class="featured" href="/performance/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Scalability/Performance">Performance</a></li>
+				              <li><a href="/bigdata/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Big Data">Big Data</a></li>
+				              <li><a href="/devops/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="DevOps">DevOps</a></li>
+				              <li><a href="/cloud-computing/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Cloud">Cloud</a></li>
+				              <li><a class="featured" href="/apm/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Cloud">APM</a></li>
+				              <li><a href="/virtualization/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Virtualization">Virtualization</a></li>
+				              <li><a class="featured" href="/NoSQL/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="NoSQL">NoSQL</a></li>
+							  <!-- <li><a class="more" href="#" title="">+ More topics</a></li> -->
+						</ul>
+					</div>
+					
+					<div class="menu_article">
+						<h2>Featured in <span id="operations-infrastructureHDLabel"></span></h2>
+						<h3 id="operations-infrastructureHDTitle"></h3>
+						<div class="clear"></div>
+						<p>
+							<img id="operations-infrastructureHDImg" src="" alt="" border="0" />
+							<span id="operations-infrastructureHDSummary"></span>
+						</p>
+						<div class="clear"></div>	
+						<div class="alignCenter">
+							<a class="view_all_categ" href="/operations-infrastructure/">
+								<span>All in <b id="operations-infrastructureHDLabel2">Operations &amp; Infrastructure</b></span>
+							</a>
+						</div>
+						<div class="clear"></div>	
+					</div>
+					
+					<div class="clear"></div>
+				</div>
+			</li>
+			<li id="personas_4" class="last">
+				<a class="main" href="/enterprise-architect/" title="Enterprise Architecture"><span>Enterprise Architecture</span></a>
+				<div class="top_submenu c4">
+					<div class="scroll-pane">
+						<ul class="top_submenu_links">
+				              <li><a href="/enterprise-architecture/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Enterprise Architecture">Enterprise Architecture</a></li>
+				              <li><a href="/bpm/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="BPM">BPM</a></li>
+				              <li><a href="/business_it_alignment/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Business/IT Alignment">Business/IT Alignment</a></li>
+				              <li><a href="/Architecture-Documentation/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Architecture Documentation">Architecture Documentation</a></li>
+				              <li><a href="/Governance/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="IT Governance">IT Governance</a></li>
+				              <li><a href="/soa/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="SOA">SOA</a></li>
+							  <!-- <li><a class="more" href="#" title="">+ More topics</a></li> -->
+						</ul>
+					</div>
+					
+					<div class="menu_article">
+						<h2>Featured in <span id="enterprise-architectHDLabel"></span></h2>
+						<h3 id="enterprise-architectHDTitle"></h3>
+						<div class="clear"></div>
+						<p>
+							<img id="enterprise-architectHDImg" src="" alt="" border="0" />
+							<span id="enterprise-architectHDSummary"></span>
+						</p>
+						<div class="clear"></div>	
+						<div class="alignCenter">
+							<a class="view_all_categ" href="/enterprise-architect/">
+								<span>All in <b id="enterprise-architectHDLabel2">Enterprise Architecture</b></span>
+							</a>
+						</div>
+						<div class="clear"></div>	
+					</div>
+					
+					<div class="clear"></div>
+				</div>
+			</li>
+		</ul>
+
+		
+     	
+
+
+
+
+
+
+
+<!--	#######		qcon	#########	 -->
+
+
+<div class="qcon dual">
+	
+		
+ 	
+	<p>
+		<a href="http://qconnewyork.com/?utm_source=infoq&utm_medium=header&utm_campaign=infoqheader" target="_blank" title="New York 2014"><strong>New York 2014</strong><br />Jun 9 - Jun 13</a>
+	</p>
+	<p>
+		<a href="http://qconsf.com/?utm_source=infoq&utm_medium=header&utm_campaign=infoqheader" target="_blank" title="San Francisco 2014"><strong>San Francisco 2014</strong><br />Nov 3 - Nov 7</a>
+	</p>
+</div>
+
+		
+		<div class="clear"></div>
+		
+    	
+
+
+
+
+
+
+
+
+<!--	#######		submenu	#########	 -->
+<ul class="submenu">
+    <li><a href="/mobile/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Mobile">Mobile</a></li>
+    <li><a href="/HTML5Topic/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="HTML5">HTML5</a></li>
+    <li><a href="/javascript/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="JavaScript">JavaScript</a></li>
+	<li><a href="/apm/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="APM">APM</a></li>
+
+    <li><a href="/api/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="API Design">API Design</a></li><li><a href="/bigdata/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Big Data">Big Data</a></li><li><a href="/rest/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="REST">REST</a></li><li><a class="last" href="/cloud-computing/?utm_source=infoq&utm_medium=header_graybar&utm_campaign=topic_clk" title="Cloud">Cloud</a></li>
+</ul>
+	
+    <div class="all_topics"><a href="/topics">All topics</a></div>
+    
+    
+
+	
+		
+		
+	<div class="clear"></div>
+
+	
+
+
+
+
+
+
+
+
+
+<div class="breadcrumbs">
+	<span class="first">You are here:</span>
+	<a class="normal" href="/?utm_source=infoq&amp;utm_medium=breadcrumbs_feature&amp;utm_campaign=breadcrumbs" title="InfoQ Homepage">InfoQ Homepage</a>
+	
+		
+            
+            
+                <a class="normal" href="/minibooks?utm_source=infoq&amp;utm_medium=breadcrumbs_feature&amp;utm_campaign=breadcrumbs" title="Books">Books</a>
+                
+		
+		<span class="last">Scrum and XP from the Trenches</span>
+	
+	
+    
+</div>
+
+	
+	<div class="clear"></div>
+</div>		
+<!--	#######		HEADER END	#########	 -->
+	
+			
+		<!--	#######		CONTENT START	#########	 -->
+		<div id="content">
+			
+	<h1 class="general">Scrum and XP from the Trenches</h1>
+	<span class="author_general">
+		by
+		
+			
+		
+		<strong><a
+	
+	href="/author/Henrik-Kniberg"
+
+ class="editorlink f_taxonomyEditor">
+Henrik Kniberg</a>
+</strong>
+		
+		on
+		<strong>Jun 27, 2007</strong>
+		
+	</span>
+	
+	
+
+
+
+
+
+
+
+<ul class="share_this">
+    <li class="space">Share</li>
+    <li>
+        <a href="http://www.addthis.com/bookmark.php?v=250&amp;username=infoq" class="standard addthis_button" style="background:none;text-decoration:none;color:#1C497B; padding:0 2px; float:left; font-weight: bold;font-size: 85%;">
+            <img src="http://s7.addthis.com/static/btn/sm-plus.gif"  width="16" height="15" border="0" alt="Share" />
+        </a>
+    </li>
+
+    <li>
+        <span class="addthis_separator">|&nbsp;</span>
+    </li>
+
+    <li><a class="standard addthis_button_facebook"></a></li>
+    <li><a class="standard addthis_button_digg"></a></li>
+    <li><a class="standard addthis_button_dzone"></a></li>
+    <li><a class="standard addthis_button_twitter"></a></li>
+    <li><a class="standard addthis_button_reddit"></a></li>
+    <li><a class="standard addthis_button_delicious"></a></li>
+    <li><a class="standard addthis_button_email"></a></li>
+
+    
+        
+        
+            <li><a id="bookmarkBtn" href="#" onclick="Bookmarks.bookmarkContent('minibooks', 'scrum-xp-from-the-trenches');return false;" class="read_later" title=""><q>Read later</q></a></li>
+            <li><a class="reading_list" style="margin-right: 100px;" href="/showbookmarks.action"><q>My Reading List</q></a></li>
+        
+    
+</ul>
+
+<script type="text/javascript">
+   var addthis_config = {
+      data_ga_property: 'UA-6608133-2',
+      data_ga_social: true
+   };
+</script>
+
+
+<!-- AddThis Button END -->
+
+
+		
+	<div class="clear"></div>
+		
+	<div class="ebook nobg">
+		<div class="pic">
+			
+				<div class="img_cover">
+					<img src="/resource/minibooks/scrum-xp-from-the-trenches/en/cover/ScrumAndXpFromTheTrenchesonline250x355.JPG" alt="" border="0" />
+				</div>
+			
+			<div class="eBookLeft">
+				<div class="about_authors">
+					<h2>About the Author</h2>
+<p>Henrik Kniberg is a consultant at Crisp in Stockholm (<a href="http://www.crisp.se">http://www.crisp.se</a>), specializing in Java and Agile software development. He has founded several Swedish software companies and is passionate about learning, teaching, and applying the art of software development. Henrik takes a holistic approach and enjoys adopting different roles such as manager, developer, scrum master, teacher, and coach. For more info see <a href="http://www.crisp.se/henrik.kniberg">http://www.crisp.se/henrik.kniberg</a>.</p>
+					<div class="clear"></div>
+				</div>
+			
+				
+
+
+
+
+
+
+
+<div class="newsletter ">
+	<h3>InfoQ Weekly Newsletter</h3>
+	<p>
+		Subscribe to our Weekly email newsletter to follow all new content on InfoQ
+		<span id="floatingNewsletterEmailSuccess" style="color:green;"></span>
+		<span id="floatingNewsletterEmailError" style="color:red;"></span>
+	</p>
+	<div class="click2view">
+		<a target="_blank" href="/newsletter_sample.html">
+			<img src="http://cdn3.infoq.com/styles/i/click2view_en.png" alt="" border="0" />
+		</a>
+	</div>
+	<div class="clear"></div>
+	<form name="floatingNewsletterForm" id="floatingNewsletteForm" action="#" onsubmit="floatingNewsletter.saveSubscription(); return false;">
+		<fieldset>
+			<input type="text" class="input_text" id="floatingNewsletterEmail" name="floatingNewsletterEmail" value="Your email here" 
+		            	onclick="floatingNewsletter.clearEmailText();" onblur="floatingNewsletter.resetEmailText();" />
+			<input type="submit" value="Subscribe" id="sbs" name="sbs" class="input_submit" onclick="return floatingNewsletter.validateEmail('Invalid email address');"/>
+		</fieldset>
+	</form>
+	<div class="clear"></div>
+</div>
+<script type="text/javascript">
+	var floatingNewsletter = new Newsletter('Your email here', 'floatingNewsletterEmail', 'floatingNewsletterForm', 'floatingNewsletterEmailError', 'floatingNewsletterEmailSuccess');
+</script>
+
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="txt">
+			
+			
+			
+			<input type="hidden" id="dldLinkFinal"/>
+			
+			
+			<p>The tricky part to agile software development is that there is no manual telling you exactly how to do it. You have to experiment and continuously adapt the process until it suits your specific situation.</p>
+<p>This book aims to give you a head start by providing a detailed down-to-earth account of how one Swedish company implemented Scrum and XP with a team of approximately 40 people and how they continuously improved their process over a year's time.</p>
+<p>Under the leadership of Henrik Kniberg they experimented with different team sizes, different sprint lengths, different ways of defining &quot;done&quot;, different formats for product backlogs and sprint backlogs, different testing strategies, different ways of doing demos, different ways of synchronizing multiple Scrum teams, etc. They also experimented with XP practices - different ways of doing continuous build, pair programming, test driven development, etc, and how to combine this with Scrum.</p>
+<p>Your team's constraints may dictate a different configuration of practices (and even compromises), but here is an example of how to approach the &quot;continuous improvement&quot; process that will make your Agile process work best for you.</p>
+<p>This book includes:</p>
+<ul>
+    <li>Practical tips and tricks for most Scrum and XP practices</li>
+    <li>Typical pitfalls and how they were addressed</li>
+    <li>Diagrams and photos illustrating day-to-day work</li>
+    <li>Testing and test-driven development</li>
+    <li>Scaling and coordinating multiple teams</li>
+    <li>Dealing with resistance from inside and outside the team</li>
+    <li>Planning and time estimation techniques</li>
+    <li>Forwards by Jeff Sutherland and Mike Cohn</li>
+</ul>
+<p>168 pages, 6&quot; x 9&quot;, ISBN: 978-1-4303-2264-1</p>
+<h2>Free download</h2>
+<p>Courtesy of Henrik Kniberg and InfoQ.com, we're happy to offer a free version for download, to get this knowledge in as many peoples hands as possible. 
+			<span class="downloadLinks">				
+				
+				 
+					<a href="javascript:void(0)" onClick="$('#dldLinkFinal').val('/minibooks/download/scrum-xp-from-the-trenches');UserActions_Login.showLoginWidget(this,'minibookDownload');">Download this book FREE (PDF)</a> 
+					 
+					
+				
+			</span>
+		</div>
+		<div class="eBookRight">
+		   	</p>
+<h2>Buy the print version for $22.95</h2>
+<p>If you enjoyed reading the free (non-printable) download version, please support the author and InfoQ's book series by <a target="_blank" href="http://www.lulu.com/content/899349">buying the print version for only $22.95</a>.</p>
+<h2>Translations</h2>
+<p>Here you can find the translated versions of the book:</p>
+<ul>
+    <li><a href="http://www.infoq.com/resource/news/2007/06/scrum-xp-book/en/resources/ScrumAndXpFromTheTrenches_French.pdf">French</a> version, thanks to Guillaume Mathias, Bruno Orsier, Emmanuel Etasse, Christophe Bunn</li>
+    <li><a href="http://www.infoq.com/cn/minibooks/scrum-xp-from-the-trenches">Chinese</a> version, thanks to Jacky Li</li>
+    <li><a href="http://www.infoq.com/jp/minibooks/scrum-xp-from-the-trenches">Japanese</a> version, thanks to Shoichi Goto</li>
+    <li><a href="http://www.proyectalis.com/wp-content/uploads/2008/02/scrum-y-xp-desde-las-trincheras.pdf"> Spanish</a> version, thanks to &Aacute;ngel Medinilla</li>
+    <li><a href="http://www.infoq.com/br/minibooks/scrum-xp-from-the-trenches">Portuguese</a> version, thanks to various volunteers</li>
+    <li><a href="http://scrum.org.ua/wp-content/uploads/2008/12/scrum_xp-from-the-trenches-rus-final.pdf">Russian</a> version, thanks to various volunteers</li>
+    <li><a href="http://www.infoq.com/resource/news/2007/06/scrum-xp-book/en/resources/ScrumAndXpFromTheTrenchesonline_German.pdf">German</a> version, thanks to Robert S&ouml;semann &amp; Andreas Schliep</li>
+    <li><a href="http://www.infoq.com/resource/news/2007/06/scrum-xp-book/en/resources/ScrumAndXpFromTheTrenchesonline_TraditionalChinese.pdf">Traditional Chinese</a> version, thanks to Ko Jen-Chieh</li>
+    <li><a href="http://www.infoq.com/resource/news/2007/06/scrum-xp-book/en/resources/Scrum and XP from the Trenches - Slovak.pdf">Slovak</a> version, thanks to Dusan Kocurek</li>
+    <li><a href="http://www.infoq.com/resource/news/2007/06/scrum-xp-book/en/resources/ScrumandXPfromtheTrenchesItalian.pdf">Italian</a> version, thanks to Antonio Lucca &amp; Luca Minudel. <a href="http://www.open-ware.org/eng/news/kniberg1.htm">Kindle and iPhone/iPAd</a> formats available.</li>
+    <li><a href="http://www.infoq.com/resource/news/2007/06/scrum-xp-book/en/resources/ScrumAndXP-Farsi.pdf">Persian</a> version, thanks to Asad Safari</li>
+    <li><a href="http://www.infoq.com/resource/news/2007/06/scrum-xp-book/en/resources/Scrum dan XP Secara Praktis.pdf">Indonesian</a> version, thanks to Ifnu bima</li>
+</ul>
+<h2>Table of contents</h2>
+<p><strong>Foreward by Jeff Sutherland<br />
+Foreward by Mike Cohn</strong></p>
+<ul>
+    <li>Introduction</li>
+    <li>How we do product backlogs</li>
+    <li>How we prepare for Sprint planning</li>
+    <li>How we do Sprint planning</li>
+    <li>How we communicate Sprints</li>
+    <li>How we do Sprint backlogs</li>
+    <li>How we arrange the team room</li>
+    <li>How we do daily Scrum</li>
+    <li>How we do Sprint demos</li>
+    <li>How we do Sprint retrospectives</li>
+    <li>Slack time between Sprints</li>
+    <li>How we do release planning and fixed priced contracts</li>
+    <li>How we combine Scrum with XP</li>
+    <li>How we do testing</li>
+    <li>How we handle multiple Scrum teams</li>
+    <li>How we handle geographically distributed teams</li>
+    <li>Scrum master checklist</li>
+    <li>Parting words</li>
+</ul>
+
+			<div class="clear"></div>
+			<div class="random_links">
+				<ul>
+					
+						
+						
+						
+						
+						<li><a><span class="gray_color">Sections</span></a></li>
+				<li><a class="f_taxonomy" href="/process-practices" name="process-practices" id="6,817"><b>Process & Practices</b></a></li>
+	<li><a><span class="gray_color">Topics</span></a></li>
+					<li><a class="f_taxonomy" href="/agile_enterprise" name="agile_enterprise" id="34">Agile in the Enterprise</a></li>					<li><a class="f_taxonomy" href="/agile_techniques" name="agile_techniques" id="192">Agile Techniques</a></li>					<li><a class="f_taxonomy" href="/teamwork" name="teamwork" id="197">Teamwork</a></li>					<li><a class="f_taxonomy" href="/stories" name="stories" id="40">Stories & Case Studies</a></li>					<li><a class="f_taxonomy" href="/scrum" name="scrum" id="54">Scrum</a></li>					<li><a class="f_taxonomy" href="/distributed_teams" name="distributed_teams" id="198">Distributed Teams</a></li>					<li><a class="f_taxonomy" href="/introducing_agile" name="introducing_agile" id="51">Introducing Agile</a></li>					<li><a class="f_taxonomy" href="/pairprogramming" name="pairprogramming" id="582">Pair Programming</a></li>					<li><a class="f_taxonomy" href="/agile" name="agile" id="3">Agile</a></li>					<li><a class="f_taxonomy" href="/xp" name="xp" id="56">XP</a></li>					<li><a class="f_taxonomy" href="/collaborative_technologies" name="collaborative_technologies" id="272">Collaborative Technologies</a></li>					<li><a class="f_taxonomy" href="/collaboration" name="collaboration" id="128">Collaboration</a></li>
+				</ul>							
+			</div>
+			<div class="clear"></div>
+			
+			
+			
+			
+			
+		   	
+
+
+
+
+
+
+
+
+<div class="related_sponsors wholething">
+	<div class="gray_section_related">
+	    <div class="related_editorial recommended">
+	        <p class="title">Related Editorial</p>
+	        <div id="editorial_links" class="links">
+	            <div class="clear"></div>
+	        </div>
+	    </div>
+	    
+	        
+	            <div class="related_editorial sponsored">
+	                <p class="title">Related Vendor Content</p>
+	                <div class="links">
+	                    
+	                    
+	                    
+	                    
+	                        
+	                            
+	                        
+	                        <h3 title="" class="entrypdf f_vcrbottom" jsh="{&quot;id&quot;:2718,&quot;title&quot;:&quot;Kanban Roadmap: How to Get Started in 5 Steps&quot;}">
+	                            <a href="/vendorcontent/show.action?vcr=2718&utm_source=infoq&utm_medium=VCR&utm_campaign=vcr_minibooks_click" >
+	                                Kanban Roadmap: How to Get Started in 5 Steps
+	                            </a>
+	                        </h3>
+	                    
+	                        
+	                            
+	                        
+	                        <h3 title="" class="entrypdf f_vcrbottom" jsh="{&quot;id&quot;:2717,&quot;title&quot;:&quot;Top 11 Things You Need to Know About DevOps&quot;}">
+	                            <a href="/vendorcontent/show.action?vcr=2717&utm_source=infoq&utm_medium=VCR&utm_campaign=vcr_minibooks_click" >
+	                                Top 11 Things You Need to Know About DevOps
+	                            </a>
+	                        </h3>
+	                    
+	                        
+	                            
+	                        
+	                        <h3 title="" class="entrypdf f_vcrbottom" jsh="{&quot;id&quot;:2756,&quot;title&quot;:&quot;How to Add Security Requirements into Different Development Processes&quot;}">
+	                            <a href="/vendorcontent/show.action?vcr=2756&utm_source=infoq&utm_medium=VCR&utm_campaign=vcr_minibooks_click" >
+	                                How to Add Security Requirements into Different Development Processes
+	                            </a>
+	                        </h3>
+	                    
+	                        
+	                            
+	                        
+	                        <h3 title="" class="entrypdf f_vcrbottom" jsh="{&quot;id&quot;:2698,&quot;title&quot;:&quot;eBook: Service Virtualization for Dummies&quot;}">
+	                            <a href="/vendorcontent/show.action?vcr=2698&utm_source=infoq&utm_medium=VCR&utm_campaign=vcr_minibooks_click" >
+	                                eBook: Service Virtualization for Dummies
+	                            </a>
+	                        </h3>
+	                    
+	                        
+	                            
+	                        
+	                        <h3 title="" class="entrypdf f_vcrbottom" jsh="{&quot;id&quot;:2755,&quot;title&quot;:&quot;5 Steps to Get Started with Software Security Requirements&quot;}">
+	                            <a href="/vendorcontent/show.action?vcr=2755&utm_source=infoq&utm_medium=VCR&utm_campaign=vcr_minibooks_click" >
+	                                5 Steps to Get Started with Software Security Requirements
+	                            </a>
+	                        </h3>
+	                    
+	                    
+	                    
+	                        
+	                        
+	                    
+	                    <div class="clear"></div>
+	                </div>
+	            </div>
+	        
+        </div>
+        
+    
+    
+    <div class="clear"></div>
+    <div class="related_research"></div>
+</div>
+
+
+<script type="text/javascript">
+    $.ajax({
+        url: "/api/recommendationlinks.action",
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        type: 'POST',
+        data: {"topicIds": "51,48,3,53,37,189,268,194,-1000,-1000", "title": "Scrum and XP from the Trenches", "contentPath": "/minibooks/scrum-xp-from-the-trenches", "language": "en"},
+        success: displayRelatedEditorial,
+        async: false
+    });
+    
+    function displayRelatedEditorial(data) {
+        var trackingCode = "?utm_source=infoq&utm_medium=related_content_link&utm_campaign=relatedContent_minibooks_clk";
+        if (data.length > 0) {
+            for (var i = 0; i < data.length; i++) {
+                if (i === 5) {
+                    break;
+                }
+                var link = $('<h3 title="" class="' + data[i].contentType + '">\n\
+                                    <a title="" href="' + data[i].url + trackingCode +
+                        '">' + data[i].title + '</a></h3>');
+                $('#editorial_links').append(link);
+            }
+            $('.gray_section_related > .related_editorial.recommended').css('display', 'block');
+        }
+    }
+</script> 
+
+<script type="text/javascript">
+    $.ajax({
+        type: "POST",
+        url: '/widgets/researchHorizontalWidget.action',
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        data: {
+            "path": 'scrum-xp-from-the-trenches',
+            "uriMapping": 'minibooks'
+        },
+        success: displayRelatedResearch,
+        error: function() {
+            // fail silently
+        },
+        async: false
+    });
+    
+    function displayRelatedResearch(data) {
+        if (InfoQConstants.language != 'en') {
+            return;
+        }
+        if (data.matchedList && data.matchedList.length > 0) {
+            $('.related_research').append('<p class="title">Related Research</p>')
+            for (var i = 0; i < data.matchedList.length; i++) {
+                var link = $('<a class="rel_results" title="" href="' + data.matchedList[i][0] +
+                        '?utm_source=infoqresearch&utm_campaign=rr-content">' +
+                        '<img border="0" alt="" src="' + data.matchedList[i][2] + '">' +
+                        data.matchedList[i][1] +
+                        '</a>');
+                $('.related_research').append(link);
+            }
+            if (data.latestList) {
+                for (var i = 0; i < data.latestList.length; i++) {
+                    var link = $('<a class="rel_results" title="" href="' + data.latestList[i][0] +
+                            '?utm_source=infoqresearch&utm_campaign=rr-content">' +
+                            '<img border="0" alt="" src="' + data.latestList[i][2] + '">' +
+                            data.latestList[i][1] +
+                            '</a>');
+                    $('.related_research').append(link);
+                }
+            }
+            $('.related_research').show();
+        }
+    }
+</script>	
+
+
+<script type="text/javascript">
+    
+        $(function() {
+        	var grayBox = $('.gray_section_related');
+            var recommendedColumn = $('.gray_section_related > .related_editorial.recommended');
+            var recommendedExists = $(recommendedColumn).css('display') === 'block';
+            var vcrColumn = $('.gray_section_related > .related_editorial.sponsored');
+            var vcrExists = $(vcrColumn).length === 1;
+            var sponsorshipColumn = $('.related_sponsors > .paid_section')
+            var sponsorshipExists = $(sponsorshipColumn).length === 1;
+            var researchRow = $('.related_research');
+            var researchExists = $(researchRow).css('display') === 'block';
+
+            if (recommendedExists || vcrExists || sponsorshipExists || researchExists) {
+                $('.related_sponsors.wholething').show(); // show the big related box
+            }
+			
+            if(recommendedExists || vcrExists){
+            	$('.gray_section_related').show(); // show the gray box for vcr and recommendations
+            }
+            
+            // in case all three available, leave now
+            if (recommendedExists && vcrExists && sponsorshipExists) {
+                return;
+            }
+            // in case only two of them available
+            if (recommendedExists && vcrExists && !sponsorshipExists) {
+                $(recommendedColumn).addClass('only2');
+                $(vcrColumn).addClass('only2last');
+                $(grayBox).addClass('only2 fullWidth');                
+            } else if (recommendedExists && sponsorshipExists && !vcrExists) {
+                $(recommendedColumn).addClass('only2');
+                $(sponsorshipColumn).addClass('only2last');
+                $(grayBox).addClass('only1');
+            } else if (vcrExists && sponsorshipExists && !recommendedExists) {
+                $(vcrColumn).addClass('only2');
+                $(sponsorshipColumn).addClass('only2last');
+                $(grayBox).addClass('only1');
+            }
+            // in case only one is available
+            else if (recommendedExists && !vcrExists && !sponsorshipExists) {
+                $(recommendedColumn).addClass('only1');
+                $(grayBox).addClass('only1 fullWidth');
+            } else if (vcrExists && !recommendedExists && !sponsorshipExists) {
+                $(vcrColumn).addClass('only1');
+                $(grayBox).addClass('only1 fullWidth');
+            } else if (sponsorshipExists && !recommendedExists && !vcrExists) {
+                $(sponsorshipColumn).addClass('only1');
+            }
+            // in case none is available, do not display upper border for the research category if any
+            else if (researchExists) {
+                $(researchRow).addClass('only1');
+            }
+        });
+</script>
+<div class="clear"></div>
+		   	
+			<div class="clear"></div>
+		</div>
+	</div>
+		
+	<div class="clear"></div>
+	
+
+
+
+
+
+
+
+
+
+
+
+	<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=infoq"></script>
+
+<script type="text/javascript">if (!NREUMQ.f) { NREUMQ.f=function() {NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src="https://js-agent.newrelic.com/nr-100.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrf2","beacon-1.newrelic.com","bfafe6a5f6",410411,"YAFWMEEAW0RUVk1cCllLfjdjTlheW1xbWgpcFxsXWw5CGV9GSQ==",0,76,new Date().getTime()])</script>
+		</div>
+		<!--	#######		CONTENT END	#########	 -->
+		
+		<div class="clear"></div>
+	</div>
+	<!--	#######		SITE END	#########	 -->
+
+	
+
+
+
+
+
+
+
+
+
+<!--	#######		FOOTER START	#########	 -->
+<div id="footer">
+	<div class="footer_bg">
+		<div id="latestContent" class="footer_class"></div>
+		<div class="clear"></div>
+	</div>
+			
+	<div class="footer">
+		<ul class="footerMenu">
+		  	<li class="l1"><a class="active" href="/" title="Home">Home</a></li>
+		  	<li class="l2"><a class="active" href="/topics" title="All topics">All topics</a></li>
+			<li class="l3"><a href="http://www.qconferences.com/" target="_blank" title="QCon Conferences">QCon Conferences</a></li>
+	        
+				<li class="l7"><a href="/aboutus" title="About us">About us</a></li>
+		    	<li class="l7"><a href="/aboutyou" title="About You">About You</a></li>		    	
+		    	<li class="l7"><a href="/contribute" title="Our Contributor Team">Our Contributor Team</a></li>		    	
+		    	<li class="l7"><a href="/purpose" title="Purpose Index">Purpose Index</a></li>		    	
+			
+			
+		  	
+			
+				<li class="l5"><a href="/reginit.action" title="Create account">Create account</a></li>
+				<li class="l6"><a class="login_btn_footer" href="#" onClick="return false;" title="Login">Login</a></li>
+			
+		</ul>
+			
+      	
+
+
+
+
+
+
+
+<ul class="footerTxt1">
+	<li><strong>QCons Worldwide</strong></li>
+
+	<li><img class="qconflag uk"/><a href="http://www.qconlondon.com/?utm_source=infoq&utm_medium=listing&utm_campaign=footer" target="_blank" title="QCon London, March 5-7, 2014">London, March 5-7, 2014</a></li>
+	<li><img class="qconflag br"/><a href="http://www.qconsp.com/?utm_source=infoq&utm_medium=listing&utm_campaign=footer" target="_blank" title="QCon São Paulo, Apr 9-11, 2014">São Paulo, Apr 9-11, 2014</a></li>
+	<li><img class="qconflag us"/><a href="http://qconnewyork.com/?utm_source=infoq&utm_medium=listing&utm_campaign=footer" target="_blank" title="QCon New York, Jun 9 –13, 2014">New York, Jun 9 –13, 2014</a></li>
+	<li><img class="qconflag us"/><a href="http://qconsf.com/?utm_source=infoq&utm_medium=listing&utm_campaign=footer" target="_blank" title="San Francisco, Nov 3 – Nov 7, 2014">San Francisco, Nov 3 – Nov 7, 2014</a></li>
+</ul>
+
+      	
+		
+
+
+
+
+
+
+
+
+<div class="ftxt3">
+	<div class="newsletter">
+		<div class="txtNews">
+			<h3>InfoQ Weekly Newsletter</h3>
+			<p>Subscribe to our Weekly email newsletter to follow all new content on InfoQ</p>
+			<span id="footerNewsletterEmailSuccess" style="color:green;"></span>
+			<span id="footerNewsletterEmailError" style="color:red;"></span>
+		</div>
+		<div class="click2view">
+			<a target="_blank" href="/newsletter_sample.html">
+                <img src="http://cdn4.infoq.com/styles/i/click2view2_en.jpg" alt="" border="0" />
+			</a>
+		</div>
+		<div class="clear"></div>
+		<form name="footerNewsletterForm" id="footerNewsletteForm" action="#" onsubmit="footerNewsletter.saveSubscription(); return false;">
+			<fieldset>
+				<input type="text" class="input_text" id="footerNewsletterEmail" name="footerNewsletterEmail" value="Your email here" 
+		            	onclick="footerNewsletter.clearEmailText();" onblur="footerNewsletter.resetEmailText();" />
+                <input type="submit" value="Subscribe" id="sbs" name="sbs" class="input_submit" onclick="return footerNewsletter.validateEmail('Invalid email address');"/>
+			</fieldset>
+		</form>
+		<div class="clear"></div>
+	</div>
+	<ul class="footerTxt3">
+		<li><a class="rss" id="footerNewsletterRssLink" href="#">Your personalized RSS</a></li>
+	    
+	    
+			<li><a class="twitter" href="http://twitter.com/infoq" target="_blank">For daily content and announcements</a></li>
+	    
+		<li><a class="fb" href="http://www.facebook.com/InfoQ" target="_blank">For major community updates</a></li>
+		
+	        <li><a class="googleplus" href="https://plus.google.com/104892343728609932454" target="_blank" rel="publisher">For weekly community updates</a></li>
+       	
+	</ul>
+</div>
+<script type="text/javascript">
+	var footerNewsletter = new Newsletter('Your email here', 'footerNewsletterEmail', 'footerNewsletterForm', 'footerNewsletterEmailError', 'footerNewsletterEmailSuccess');
+</script>
+			
+			
+		<div class="our_events">
+	      	
+
+
+
+
+
+
+
+
+
+			
+			<div class="communities">
+				<p>Personalize Your Main Interests</p>
+				<br/><br/><br/>
+				<fieldset>
+					<ul>
+			        	
+
+
+
+
+
+
+
+<fieldset>
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+		
+			<tr>
+				<td valign="middle">
+					<input type="checkbox" name="development" value="true" checked="checked" id="persona6815" class="chb" onclick="includeExcludeCommunity(this, false);"/>
+
+					<span>Development</span>
+				</td>
+			</tr>
+		
+			<tr>
+				<td valign="middle">
+					<input type="checkbox" name="architecture-design" value="true" checked="checked" id="persona6816" class="chb" onclick="includeExcludeCommunity(this, false);"/>
+
+					<span>Architecture &amp; Design</span>
+				</td>
+			</tr>
+		
+			<tr>
+				<td valign="middle">
+					<input type="checkbox" name="process-practices" value="true" checked="checked" id="persona6817" class="chb" onclick="includeExcludeCommunity(this, false);"/>
+
+					<span>Process &amp; Practices</span>
+				</td>
+			</tr>
+		
+			<tr>
+				<td valign="middle">
+					<input type="checkbox" name="operations-infrastructure" value="true" checked="checked" id="persona6818" class="chb" onclick="includeExcludeCommunity(this, false);"/>
+
+					<span>Operations &amp; Infrastructure</span>
+				</td>
+			</tr>
+		
+			<tr>
+				<td valign="middle">
+					<input type="checkbox" name="enterprise-architect" value="true" checked="checked" id="persona6819" class="chb" onclick="includeExcludeCommunity(this, false);"/>
+
+					<span>Enterprise Architecture</span>
+				</td>
+			</tr>
+		
+	</table>
+</fieldset>
+
+					</ul>						
+				</fieldset>
+			</div>
+		</div>
+			
+		<div class="clear"></div>
+			
+	</div>
+	
+	<div class="clear"></div>
+</div>
+<!--	#######		FOOTER END	#########	 -->
+
+<div class="bottomContent">
+	<table cellpadding="0" cellspacing="0" border="0" width="100%" class="last_content">
+		<tr>
+			<td>
+				<div>General Feedback</div> 
+				<div><a href="mailto:feedback@infoq.com">feedback@infoq.com</a></div>
+			</td>
+			<td>
+				<div>Bugs</div> 
+				<div><a href="mailto:bugs@infoq.com">bugs@infoq.com</a></div>
+			</td>
+			<td>
+				<div>Advertising</div> 
+				<div><a href="mailto:sales@infoq.com">sales@infoq.com</a></div>
+			</td>
+			<td>
+				<div>Editorial</div> 
+				<div><a href="mailto:editors@infoq.com">editors@infoq.com</a></div>
+			</td>
+			<td class="text">
+				<span>InfoQ.com and all content copyright &#169; 2006-2013 C4Media Inc. InfoQ.com hosted at <a href="http://www.contegix.com/">Contegix</a>, the best ISP we've ever worked with.<br/><a href="/privacypolicy" target="_blank">Privacy policy</a></span>
+			</td>
+		</tr>
+	</table>
+</div>
+
+	
+	
+		<div class="intbt">
+			<a href="/int/bt" title="bt">BT</a>
+		</div>
+	
+	
+	
+
+
+
+
+
+
+
+
+<div id="id_geo_banner" style="display:none;position:fixed;bottom:0;left:0;width:100%;z-index:100000;">
+	<div id="id_geo_banner_ad" style="display:none;">
+		<script type='text/javascript'>
+		if(CookieManager.readCookie("igabgt") == null) {
+			// use the jquery.watch method to see when GAM changes the display css attribute of id_geo_banner_ad
+			// whenever an ad is placed there GAM will chnage the display which is init as none. This is the safest way to determine when an ad is fetched by GAM!
+			$("#id_geo_banner_ad").watch('display',showAd,1000);		
+			googletag.cmd.push(function() { googletag.display('id_geo_banner_ad');});
+		}
+		function showAd() {
+			try {
+				$('#id_geo_banner iframe:first').attr('width', '100%');
+				$('#id_geo_banner iframe:first').attr('height', '100%');
+				$('#id_geo_banner iframe:first').css('min-width', '1024px');
+			}catch(err){}
+			$('#id_geo_banner').show('slow');
+			setTimeout("$('#id_geo_banner').hide('slow');", 30000);
+		}
+		</script>
+	</div>
+</div>
+
+	<script src="/dwr/engine.js" type="text/javascript"></script>
+	<script src="/dwr/interface/UserCategoryUtil.js" type="text/javascript"></script>
+	<script src="/dwr/interface/DWRRewriteAction.js" type="text/javascript"></script>
+	
+
+
+
+
+
+
+
+<iframe name="loginFrame" id="loginFrame" style="width:0;height:0;border:0;"></iframe>
+<div class="login_overlay" id="loginWidget" style="display:none;">
+	<!--	html for login box	-->
+	<input type="hidden" id="loginWidgetOrigin"/>
+	<div id="popupLogin">
+		<a title="" class="close_login_flat" href="#" onclick="UserActions_Login.hideLoginWidget();return false;" >Close</a>
+		<form method="post" id="login_formLogin" 
+			  action="https://www.infoq.com/login.action" 
+			  target="loginFrame" onsubmit="UserActions_Login.showMessage(JSi18n.login_sendingRequest);">
+			<label class="label_login">Email</label>
+			<input type="text" name="username" id="login_username" class="login_text" />
+			<label class="label_login">Password</label>
+			<input type="password" name="password" id="login_password" class="login_text" />
+			<input type="submit" value="" name="submit-login" class="submit-login" />
+			
+			<div id="socialLogin">
+	            	        	
+	        		<a class="social-idp google" onclick="return addLoginInfo(this);" href="/social/googleLogin.action?fl=login" title="Login with Google">Login with Google</a>
+	        		<div class="clearer" style="height: 0px;"></div>
+	        	
+	        		
+	        			<a class="social-idp twitter" onclick="return addLoginInfo(this);" href="/social/twitterLogin.action?fl=login" title="Login with Twitter">Login with Twitter</a>
+	        			<div class="clearer" style="height: 0px;"></div>
+	        	
+	        			<a class="social-idp facebook"  onclick="return addLoginInfo(this);" href="/social/facebookLogin.action?fl=login" title="Login with Facebook">Login with Facebook</a>
+	        			<div class="clearer" style="height: 0px;"></div>
+	        		
+	        	
+	           		<a class="social-idp microsoft" onclick="return addLoginInfo(this);" href="/social/liveLogin.action?fl=login" title="Login with Microsoft">Login with Microsoft</a>
+	        		<div class="clearer" style="height: 0px;"></div>
+	            
+	        </div>
+			<div class="more_links">
+				<p>
+					<a style="text-decoration:none;" href="#" onClick="UserActions_Login.showForgotPasswordForm();return false;">
+						Forgot password ?
+					</a>
+					<br/><br/>
+				</p>
+			</div>
+		</form>
+		
+		<form method="post" id="login_formPasswordReset" 
+			  action="/resetpasswordinit.action" 
+			  target="loginFrame" style="display:none;" onsubmit="UserActions_Login.showMessage(JSi18n.login_sendingRequest);">
+			<label class="label_login">InfoQ Account Email</label>
+			<input type="text" name="email" id="login_email" class="login_text" />
+			<button type="submit" name="submit-login" style="border: 1px solid #CCCCCC; width: 100%; padding: 8px 5px;" on>Send Email</button>
+			<div class="more_links">
+				<p>
+					<a style="text-decoration:none;" href="#" onClick="UserActions_Login.showLoginForm();return false;">
+						Back to login
+					</a>
+					<br/><br/>
+				</p>
+			</div>
+		</form>
+		<form method="post" id="login_formEmailVerification" 
+			  action="/reactivate.action" 
+			  target="loginFrame" style="display:none;" onsubmit="UserActions_Login.showMessage(JSi18n.login_sendingRequest);">
+			<label class="label_login">Resend Activation</label>
+			<input type="text" name="email" id="login_emailVerification" class="login_text" />
+			<button type="submit" name="submit-login" style="border: 1px solid #CCCCCC; width: 100%; padding: 8px 5px;" on>Resend</button>
+			<div class="more_links">
+				<p>
+					<a style="text-decoration:none;" href="#" onClick="UserActions_Login.showLoginForm();return false;">
+						Back to login
+					</a>
+					<br/><br/>
+				</p>
+			</div>
+		</form>
+		<div class="more_links">
+			<p><a onclick="return addLoginInfo(this);" href="/reginit.action?" title="">Don't have a username ?</a></p>
+			<p><a onclick="return addLoginInfo(this);" href="/reginit.action?" title="">REGISTER HERE</a></p>
+			<div style="padding:5px;background:#EBF0F3;margin-top:45px;display:none;" id="loginPopupMessage"></div>
+		</div>
+	</div>
+	<!--	html for login box 	-->
+    <script type="text/javascript">
+        function addLoginInfo(link){
+            var v = $('#loginWidgetOrigin').val();
+            if(v !== undefined && v != ''){
+                addOrigin(link);
+                link.href += '%23' + v;
+                return true;
+            } else {
+                return addOrigin(link);
+            }
+        }
+    </script>
+</div>
+
+	
+
+
+
+
+
+
+<script type="text/javascript">
+	var includeName = 'content.inline_personalization.include.label';
+	var excludeName = 'content.inline_personalization.exclude.label';
+	var includeHint = 'content.inline_personalization.include.hint';
+	var excludeHint = 'content.inline_personalization.exclude.hint';
+	var excludeCategoryMessage = 'content.inline_personalization.exclude.message';
+	var viewallCategoryMessage = 'content.inline_personalization.view_all.hint';
+	var busyMessage = 'content.inline_personalization.busy.message';
+	var contextPath = '' + '/';
+	var viewallCategoryPath= '';
+	var includeExcludeLink= true;
+</script>
+
+	
+
+
+
+
+
+
+<script type="text/javascript">
+  var gaProfile="UA-6608133-2";
+  
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', gaProfile]);
+  _gaq.push(['_setLocalGifPath', 'http://www.infoq.com/styles/i/__utm.gif']);
+  _gaq.push(['_setLocalRemoteServerMode']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<script src="http://cdn3.infoq.com/scripts/tracker.js?20121126" type="text/javascript"></script>
+<script type="text/javascript">
+Tracker.safeExec(function() {
+	
+    
+    _gaq.push(["_trackEvent", "userregistered", "false"]);
+    	
+});
+Tracker.safeExec(function() {_gaq.push(["_trackEvent", "userprefs", "0"]);});
+Tracker.safeExec(Tracker.doTrackVcrImpressions);
+Tracker.safeExec(Tracker.doTrackPresentationDefaultDisplay);
+Tracker.safeExec(Tracker.doTrackTaxonomyImpressions);
+Tracker.safeExec(Tracker.doTrackAuthorImpressions);
+</script>
+
+	
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+	var newsletterSubscriptionURL ='/newsletter/subscribe.action';
+	DynamicLinks.updateRssLinks('3405691582');
+	ContentTools.updateLatestContentSection();
+	ContentTools.updatePersonaDropdowns();
+	
+	// only get the most popular links if they are used in the current page
+	//(so far they are used on homepage, inteview and presentation pages)
+	if($('#mostPopularSection').length){
+		ContentTools.updateMostPopular();
+	}
+
+	ContentSummary.setSelectedTab('en');
+	//when user enters the main content area show default topics in the topics bar
+	$("#content-wrapper").mouseenter(function() {	
+	        showDefaultTopics();
+	});
+	
+	
+	Bookmarks.contentTitle = "Scrum and XP from the Trenches";
+	Bookmarks.apiUrl = '/widgets/bookmark.action';
+</script>
+<script type="text/javascript"> 
+var $buoop = {vs:{i:6,f:1,o:10.1,s:1}} 
+$buoop.ol = window.onload; 
+$(document).ready(function() {
+	 try {if ($buoop.ol) $buoop.ol();}catch (e) {} 
+	 var e = document.createElement("script"); 
+	 e.setAttribute("type", "text/javascript"); 
+	 e.setAttribute("src", "http://cdn2.infoq.com/scripts/lib/browser-update-org/update.js"); 
+	 document.body.appendChild(e); 
+});
+</script>
+</div>
+</body>
+</html>
+

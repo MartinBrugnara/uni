@@ -1,0 +1,82 @@
+
+/* controls */
+
+.controls {
+    background: #00c8d7;  
+    height: 52px;
+    padding:20px;  
+    position: relative;
+}
+
+.controls strong {
+    color: white;
+    font-size: 1.2em;
+}
+.controls input[type="url"] {
+    height: 24px;
+    width: 480px;    
+    font-size: 1.2em;
+}
+
+.controls button {
+    height: 30px;  
+    padding-right: 5px;
+    padding-left: 5px;
+    font-size: 1.2em;
+    
+    background: #242b35;
+    color: white;
+    border: 0;
+}
+
+.controls .pin-type {
+    padding-left: 60px;
+    color: white;
+}
+
+/* Filters */
+.filters {
+    background: #efefef;
+    padding: 5px;
+    height: 20px;
+    position: relative;    
+}
+
+.filter-type {
+    position: absolute;
+    right:0;
+    width:250px;
+}
+
+/* pins */
+
+.pinboard {
+    list-style: none;
+    padding-left: 0px;
+    padding-right: 0px;
+    display: inline-block;
+    width: 100%;    
+}
+
+.pinboard li{
+    float: left;
+    width:  25%;    
+}
+
+.pinboard .pin {
+    padding: 8px;
+    text-align: center;
+}
+
+.pinboard li .thumbnail {
+    border: 1px solid #efefef;
+    padding: 2px;
+    height: 200px;
+}
+
+.pinboard li .thumbnail img, .pinboard li .thumbnail iframe{
+    width: 100%;
+    height: 100%;
+}
+
+

@@ -1,0 +1,54 @@
+Live Coding Session
+===================
+
+1. Runing php in a document.
+Let's run our Hello world example:
+
+ <?php 
+     echo "Hello world!";                                         
+  ?>
+  
+  Excellent. Let's copy paste the following and check how php parses html and php
+
+<p>This is going to be ignored by PHP and displayed by the browser.</p>
+<?php echo 'While this is going to be parsed.'; ?>
+<p>This will also be ignored by PHP and displayed by the browser.</p>
+
+2. Variables and data
+
+ <?php 
+     $name = "Pippo";
+     echo "Hello world!, $name";                                         
+     echo "Hello world," . $name;
+  ?>
+  
+ <?php 
+     $name = "Pippo";
+     $age = 18;
+     
+     echo "My name is $name, I'm $age years old.";                                         
+  ?>  
+
+3. Forms
+Let's open form.php and play with various ways of sending data to a php file from a form.
+
+
+4. Math operations
+Check out some math operations in math.php
+
+5. Conditionals and logical operations
+Open conditional.php and observe how to set conditions
+
+First Interlude: Open i1-magic.php and implement our usual magic number game, this time in php
+
+6. Loops and Arrays
+We can iterate on a block of code with "for", "foreach", while... Check out arrays-loops.php
+
+7. Functions
+Let's check how we can define functions in php. Open functions.php
+
+8. Including files
+Include files allow us to reuse pieces of functionality or html code. Replace the functions definition by functions.inc
+
+require "functions.inc";
+

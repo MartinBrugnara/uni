@@ -1,0 +1,14 @@
+Quick setup guide
+————————
+login to the server
+ssh swengXXX@didattica.science.unitn.it
+
+cd public_html
+
+wget http://disi.unitn.it/~baez/06-projects.tar
+
+tar -xvf 06-projects.tar
+
+
+
+

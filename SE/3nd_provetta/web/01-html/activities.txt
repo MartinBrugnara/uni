@@ -1,0 +1,236 @@
+Live Coding Session
+===================
+
+1. Basic document structure 
+
+<!DOCTYPE html>
+<html>
+ <head>
+   <!-- Here goes the metadata -->  
+ </head>
+ <body>
+   <!-- Here goes the visible content of the page -->
+    Hello world!
+ </body>
+</hml>
+
+
+2. Important metadata 
+The character set is important, specially if you're dealing with special 
+characters. Ty the following:
+
+-Add the text in the body tag, and reload the page: 
+
+ Hello world!. 
+ Chi C'è?
+
+- Now add the the character set and reload it again. 
+<!-- Character set -->
+<meta charset="utf-8">
+
+The page can be descibed with a title. It should appear on the browser window.
+ 
+<!-- Page title -->
+<title> HTML5 basics </title>
+
+3. Typography
+
+<!-- Paragraph -->
+<p> This is the first paragraph </p>
+<p> This is the second paragraph </p>
+
+<!-- Headings -->
+<h1>h1 tag</h1>
+<h2>h2 tag</h2>
+<h3>h3 tag</h3>
+<h4>h4 tag</h4>
+<h5>h5 tag</h5>
+<h6>h6 tag</h6>
+
+
+4. Managing lists
+
+<!-- Lists -->
+<h2>Unordered list</h2>
+<ul>
+  <li>List item 1</li>
+  <li>List item 2</li>
+</ul>
+
+<h2>Ordered list</h2>
+<ol>
+  <li>List item 1</li>
+  <li>List item 2</li>
+</ol>
+
+<h2>Nested list</h2>
+<ul>
+  <li> List item 1
+    <ol>
+      <li>List item 1</li>
+      <li>List item 2</li>
+    </ol>  
+  </li>
+  <li>List item 2</li>
+</ul>
+
+5. Hyperlinks
+
+<!-- Describing hyperlinks -->
+
+<h1>HTML A tag example</h1>
+<a href="http://google.com"> Link to google (external url) </a>
+<a href="example.html"> Link to another url in the same server (relative url)</a>
+<a href="#internal"> Internal link (to #internal)</a>
+<a href="http://google.com" target="_blank"> Open google in a new window.(target="_blank") </a>
+
+<p> 
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+6. Tables
+
+Tables are great for displaying data. It's recommended not to use it
+as a way of structuring a website.
+
+<!-- Tables -->
+
+<!-- playing with colspan and rowspan -->
+
+<table>
+ <tr>
+  <td>Row 1 - Col 1</td>
+  <td>Row 1 - Col 2</td>
+ </tr>
+ <tr>
+  <td>Row 2 - Col 1</td>
+  <td>Row 2 - Col 2</td>
+ </tr>
+ <tr>
+  <td>Row 3 - Col 1</td>
+  <td>Row 3 - Col 2</td>
+ </tr> 
+</table>
+
+
+
+7. Images and video
+
+- Images should refer to a valid url. 
+
+<img src="http://www.w3.org/html/logo/downloads/HTML5_Logo_512.png" alt="HTML5 logo">
+
+- The video format is very important with videos. The following will not play in firefox.
+
+<video src="http://dfcb.github.io/BigVideo.js/vids/dock.mp4" width="300" height="200" loop muted autoplay controls></video>     
+
+<video controls>
+    <source src="http://dfcb.github.io/BigVideo.js/vids/river.ogv" type="video/ogg">
+    <source src="http://dfcb.github.io/BigVideo.js/vids/dock.mp4">  
+</video>   
+
+8. Containers
+
+<!-- two blocks -->
+<div style="background: gray;"> 
+    This is a block 
+</div>
+
+<div style="background: cyan;"> 
+    This is another block 
+</div>
+
+<!-- nested blocks -->
+<div style="background: gray;"> 
+    This is the parent block 
+    <div style="background: cyan;">
+       This is the child block 
+    </div>
+</div>
+
+9. Defining a page layout
+
+- lets define a website with the follow structure
+
+<!-- header -->
+<div style="background: gray;"> 
+</div>
+
+<!-- Navigation -->
+<div style="background: yellow;">
+</div>
+
+<!-- Content -->     
+<div>
+</div>         
+
+<!-- footer --->
+<div style="background: cyan;"> 
+</div>
+
+- let's replace for by using the proper "semantic" element
+
+<!-- header -->
+<header style="background: gray;"> 
+</header>
+
+<!-- Navigation -->
+<nav style="background: yellow;">
+</nav>
+
+<!-- Content -->     
+<section>
+</section>         
+
+<!-- footer --->
+<footer style="background: cyan;"> 
+</footer>
+
+
+10. Forms
+
+<form method="post" action="http://test.mateine.org/sweng/echo.php">
+    <p>
+        <input type="text" name="itext" placeholder="Insert some text">
+    </p>    
+    <p>
+        <input type="email" name="iemail" placeholder="Insert email">
+    </p>    
+    <p>
+        <input type="tel" name="itel" placeholder="Insert phone">  
+    </p>
+    <p>
+        <input type="search" name="ikeyword" placeholder="Insert your keyword">  
+    </p>    
+    <p>
+        <input type="datetime-local" name="idate" value="2013-10-09T15:38:00">
+    </p>        
+    
+    <p>
+        <input type="url" name="iurl" title="Insert url">       
+    </p>
+    <h2>Other input types</h2>
+    <p>
+        <input type="radio" name="sex" value="male">Male
+        <input type="radio" name="sex" value="female">Female
+    </p>    
+    <p>
+        <input type="checkbox" name="sex" value="drink">Beer
+        <input type="checkbox" name="sex" value="drink">Wine
+        <input type="checkbox" name="sex" value="drink">Soda
+    </p>     
+    <p> Best car:
+    <select name="icar">
+      <option value="volvo">Fiat</option>
+      <option value="saab">Saab</option>
+      <option value="mercedes">Mercedes</option>
+      <option value="audi">Audi</option>
+      <option value="audi">Ferrari</option>    
+    </select>        
+    </p>
+    <input type="submit" value="Send">
+    <input type="reset" value="Clear form">
+    
+</form>  
+
+

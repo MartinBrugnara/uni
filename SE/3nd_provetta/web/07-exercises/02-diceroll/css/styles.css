@@ -1,0 +1,40 @@
+@import url(http://fonts.googleapis.com/css?family=Gafata);
+
+body {
+    font-family: "Gafata", "Helvetica", "Serif";
+    margin: 0px;
+}
+
+/* Header and footer */
+
+header, footer {
+    height: 50px;
+    padding-right: 40px;
+    padding-left: 40px;    
+    background: #242b35;
+}
+
+header .logo {
+    text-decoration: none;
+    font-size: 2.5em;
+    color:white;
+}
+
+header .logo img  {
+    width : 32px;    
+    padding-top: 5px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p{
+    color: white;
+    text-align: center;    
+}
+
+
+

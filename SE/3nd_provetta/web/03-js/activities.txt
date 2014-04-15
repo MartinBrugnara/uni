@@ -1,0 +1,185 @@
+Live Coding Session
+===================
+
+1. Runing javascript in a document.
+Let's run our Hello world example:
+
+- Using the tag script
+
+<script>
+    alert("Hello, world.");
+</script>
+
+- Loading from an external document
+
+<script src="script.js"></script>
+
+- We can also try javascript using the developer console
+
+2. Variables and data
+
+var name = "Pippo";
+var age = 18;
+
+name = "Topolino";
+age = 20;
+
+name = prompt('Please, enter your name:');
+
+3. Math operations
+Math operators are analogous to those on Java or C 
+
+2 + 5
+2 - 1
+2 * 2
+2 / 2
+
+var credit = 10;
+credit = credit + 4 - 2;
+
+4. Logical operations
+Logical operations are slightly different from Java and C, we have:
+
+2 === 2 // equality
+true
+
+2 !== 1 // inequality
+false
+
+3 > 2   // greater than
+true
+
+3 < 5   // less than 
+true
+
+3 >= 3  // greater than or equal to
+true
+
+3 <= 3  // less than or equal to
+true
+
+5. Conditionals
+
+var secret = 44;
+var guess = prompt('Guess the secret number [0-100]');
+
+if (guess == secret){
+    alert("You won!");
+}
+
+if (guess == secret){
+    alert("You won!");
+} else {
+    alert("Loooser :P");
+}
+
+if (guess == secret){    
+    alert("You won!");
+} else if (guess > secret){
+    alert("Try a smaller number");    
+} else if (guess < secret){
+    alert("Try a bigger number");        
+} 
+
+6. Loops
+We can iterate on a block of code with "for" and "while". The enclosed lines of code are executed 
+until the stop condition is reached. 
+
+var secret = 44;
+var guess = null;
+
+while (guess != secret){
+    guess = prompt('Guess the secret number [0-100]');
+    
+    if (guess == secret){    
+        alert("You won!");
+    } else if (guess > secret){
+        alert("Try a smaller number");    
+    } else if (guess < secret){
+        alert("Try a bigger number");        
+    }     
+
+}
+
+- Sometimes you want iterate a given number of times
+
+for (var i=0; i< 10; i++){
+    console.log(i);
+}
+
+// equivalent to the following code using while
+var i = 0;
+while (i < 10){
+    console.log(i);
+    i++;
+}
+
+7. Functions
+
+var add = function (a, b) {
+    return a + b;
+};
+
+add(1,2);
+
+8. Objects
+
+var bird = {
+    name: "Chuck",
+    color : "yellow",
+    maxSpeed: 10,
+    sing : function() {
+        console.log("lalalala lala");
+    }  
+};
+
+var go = function(vo, angle){
+    var vx = Math.cos(angle * Math.PI / 180) * vo;
+    var t = 0;
+    return vx * t;
+}
+
+9. Arrays
+var list = [];
+
+list = ["apple", "pear", "peach"];
+
+// accessing an element
+list[0]
+
+// Adding a new element
+list.push("banana");
+
+// Taking the last element from the array
+list.pop("banana");
+// Taking the first element
+list.shift("banana");
+
+JQuery
+======
+10. Hello world jquery
+
+- Load the jquery library
+
+<script src="jquery-2.1.0.min.js"></script>
+
+- Add the following code to your script.js
+
+
+$( document ).ready(function() {
+ 
+    $( "a" ).click(function( event ) {
+ 
+        alert( "Thanks for visiting!" );
+ 
+    });
+ 
+});
+
+10. jQuery
+
+Let's switch to ecom.html and let's analyise the code.
+
+
+
+

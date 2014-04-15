@@ -1,0 +1,262 @@
+Live Coding Session
+===================
+
+1. Applying styles to a document
+
+- We can apply inline styles by using the "style" attribute.
+
+<header style="background: gray;"> 
+
+- We can separate the attributes from the structure of the document
+using the "style" tag.
+
+<style>
+
+header {
+    background : gray;
+}
+
+</style>
+
+- We can also separate the style definition from the html by using a stylesheet
+document. This allows us to reuse the styles in different documents.
+
+<link rel="stylesheet" href="styles.css">
+
+
+2. Selectors 
+
+Selectors can be applied to tags, "classes" and ids
+
+p {
+    color: blue;
+}
+
+.active {
+    color: black;
+}
+
+#summary {
+    color: gray;
+}
+
+
+3. Colors and background
+Have a look at this online color generator: http://www.colorschemer.com/online.html
+and try the "color" property to set the text color, and "background" to set an element background color;
+
+color : rgb(184, 138, 0);
+color : #B88A00;       
+background: #E0E0E0;
+    
+4. Text
+
+Let's explore the following text properties.
+
+    font-family: arial, helvetica, serif;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: none;
+    text-transform: uppercase;
+    
+    letter-spacing: 0;
+    word-spacing: 0;
+    line-height: 1.5;
+    text-align: justify;        
+
+- Playing with web fonts: Checkout some of the fonts at: https://www.google.com/fonts
+
+@import url(http://fonts.googleapis.com/css?family=Press+Start+2P);
+
+h1 {
+    font-family: "Press Start 2P";
+}
+
+
+
+5. Grouping and nesting
+
+Analyse the following structure
+
+        <section>
+            <h1>Choose one option:</h1>
+            
+            <ul class="pins">
+                <li>
+                    <img src="http://icons.iconarchive.com/icons/iconka/meow/256/cat-walk-icon.png">
+                    <a href="#">Funny cat</a>
+                    <p> Yet another internet cat. </p>
+                </li> 
+                <li>
+                    <img src="http://icons.iconarchive.com/icons/iconka/meow/256/cat-walk-icon.png">
+                    <a href="#">Soft kitty</a>
+                    <p> Yet another internet cat. </p>
+                </li>   
+                <li>
+                    <img src="http://icons.iconarchive.com/icons/iconka/meow/256/cat-walk-icon.png">
+                    <a href="#">Warm kitty</a>
+                    <p> Yet another internet cat. </p>
+                </li>                   
+
+            </ul> 
+        </section>     
+
+/* Levels */
+
+/* Pins */
+.pins {
+    background: #D6F5FF;
+}
+
+.pins li {
+    list-style: none;
+}
+
+.pins h1 {
+    font-size: 14px;
+}
+
+.pins li.selected {
+    background: #efefef;
+}
+
+
+6. The Box model
+
+- Lets add the following styles to our level class, and inspect the box model using the browser's 
+inspection tool.
+
+.pins {
+    padding: 0px;
+}
+
+.pins li {
+    list-style: none;
+    
+    border: 1px solid #3D3D3D;
+    padding: 10px;
+    margin : 10px;
+    width: 200px;     
+    
+}
+
+Each box defines a context. All properties set on a box, depend on the parent box.
+
+.pins li img {
+    width: 100%;
+}
+
+- Display
+There are two types of main types of "display" for all the elements (boxes): inline and block display. Compare the following code to the previous structure:
+
+<ul>...</ul>
+
+<a href="somelink.html">Soft kitty</a>
+<a href="somelink.html">Warm kitty</a>
+
+The default behaviour can be changes by using the "display" property.
+
+.level {
+    display: inline;
+}
+
+Noticed that the previous example breaks the structure of the element. This is because the .level element contains "block" elements inside.  Now try the following:
+
+display: inline-block;    
+
+
+7. Page layout
+Let's open the position.html fiel and try the following css:
+
+.container {
+    margin-top:50px;
+    margin-left: 50px;
+    
+    width: 500px;
+    height: 500px;
+    background: #efefef;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background: #395cba;
+    padding: 10px;
+    border: 1px solid black;
+    color: white;
+    font-size: 18px;
+}
+
+Let's now play with the values: static, relative, absolute, fixed
+
+.box {    
+    position: relative;
+    left: 20px;
+    top: 20px;
+}
+
+- Let's try the top nav
+nav {
+    background: #efefef;
+    padding: 5px;
+    width: 100%;
+    
+    position: absolute;
+    top: 0;
+}
+
+header {
+    margin-top: 50px;
+}
+
+footer {
+    background: #efefef;
+    padding: 5px;
+    width: 100%;
+    
+    position: fixed;
+    bottom: 0;    
+}
+
+- Side nav
+nav {
+    background: #efefef;
+    padding: 5px;
+    width: 200px;
+    height: 100%;
+    
+    position: absolute;
+    top: 0;
+}
+
+header {
+    margin-left: 250px;
+}
+
+
+
+8. Giving life to a webapp
+- pseudo classes
+
+.pins li:hover {
+    background: #efefef;
+}
+
+.pins li:active {
+    background: #3D3D3D;
+}
+
+
+- transitions and transformations
+
+.pins li:active img {
+    -webkit-transform: rotate(-10deg) scale(1.5);   
+    -webkit-transition: .5s;
+}
+
+
+
+

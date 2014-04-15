@@ -1,0 +1,163 @@
+CRUD step by step
+-----------------
+1- Let's prepare the php to handle the form requests
+
+
+
+if (isset($_POST['option'])){
+
+    if ($_POST['option'] == 'Insert'){
+
+        echo "I will handle the Insert<br>"
+
+    } else if ($_POST['option'] == 'Update'){
+    
+        echo "I will handle the Update<br>"
+   
+    } else if ($_POST['option'] == 'Delete'){
+    
+        echo "I will handle the Delete<br>"
+    }
+   var_dump($_POST); 
+}
+
+echo "No matter what option is selected, I always print the list";
+
+
+2- Let's define fuctions that will handle the requests
+
+- handling insert
+
+        $pin = array(
+            "title" => $_POST['pin_title'],
+            "url" => $_POST['pin_url']
+        );   
+
+        pin_insert($pin);
+
+- handling update
+        $pin = array(
+            "id" => $_POST['pin_id'],
+            "title" => $_POST['pin_title'],
+            "url" => $_POST['pin_url']
+        );   
+
+        pin_update($pin);
+- handling delete
+       $pin_id = $_POST['pin_id'];
+       pin_delete($pin_id);
+
+
+3- Let's implement the functions
+
+function pin_load(){
+    $host = "didattica.science.unitn.it";
+    $dbname = "db_sweng002";
+    $user = "sweng002";
+    $pass = "sweng002abc";
+
+    $PIN_LOAD_SQL = "select id, title, url from pins";
+
+    try {
+        // open database
+    	$dbh = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass); 
+
+        foreach ($dbh->query($PIN_LOAD_SQL) as $row){
+            $id = $row['id'];
+            $title = $row['title'];
+            $url = $row['url'];
+            echo "$id $title $url <br>";   
+        }
+
+        // close database
+        $dbh = null;
+    }
+    catch(PDOException $e){
+        echo $e->getMessage();
+    } 
+
+}
+
+function pin_insert ($place){
+
+    $host = "didattica.science.unitn.it";
+    $dbname = "db_sweng002";
+    $user = "sweng002";
+    $pass = "sweng002abc";
+
+    $PIN_INSERT_SQL = "INSERT INTO pins(title, url) values (:pin_title, :pin_url)";
+    try {
+        // open database
+    	$dbh = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass); 
+        
+        $stmt = $dbh->prepare($PIN_INSERT_SQL); 
+        
+        $stmt->bindValue(':pin_title', $place['title']);        
+        $stmt->bindValue(':pin_url', $place['url']);
+        
+        $stmt->execute();        
+        
+        // close database
+        $dbh = null;
+        
+    }
+    catch(PDOException $e){
+        echo $e->getMessage();
+    } 
+} 
+
+function pin_update ($place){
+
+    $host = "didattica.science.unitn.it";
+    $dbname = "db_sweng002";
+    $user = "sweng002";
+    $pass = "sweng002abc";
+
+    $PIN_UPDATE_SQL = "UPDATE pins SET title = :pin_title, url = :pin_url WHERE id = :pin_id";
+    try {
+        // open database
+        $dbh = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+
+        $stmt = $dbh->prepare($PIN_UPDATE_SQL);
+
+        $stmt->bindValue(':pin_id', $place['id']);
+        $stmt->bindValue(':pin_title', $place['title']);
+        $stmt->bindValue(':pin_url', $place['url']);
+
+        $stmt->execute();
+
+        // close database
+        $dbh = null;
+
+    }
+    catch(PDOException $e){
+        echo $e->getMessage();
+    }
+}
+ 
+function pin_delete ($pin_id){
+    $host = "didattica.science.unitn.it";
+    $dbname = "db_sweng002";
+    $user = "sweng002";
+    $pass = "sweng002abc";
+
+    $PIN_DELETE_SQL = "DELETE FROM pins where id = :pin_id";
+    
+    try {
+        // open database
+    	$dbh = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass); 
+        
+        $stmt = $dbh->prepare($PIN_DELETE_SQL); 
+        
+        $stmt->bindValue(':pin_id', $pin_id);                         
+        
+        $stmt->execute();        
+        
+        // close database
+        $dbh = null;
+        
+    }
+    catch(PDOException $e){
+        echo $e->getMessage();
+    } 
+}  

@@ -1,0 +1,105 @@
+GeoPin Step by step
+--------------------
+1. let's try to get the location from the client
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(GeoPin.loadMap);        
+    } else {
+      alert('not supported');
+    }     
+
+2. Given an address, how do we get the coordinates?    
+Let's create a function that does that
+
+    getAddressCoordinates : function(address, handler){
+        var geocoder = new google.maps.Geocoder();
+        
+        geocoder.geocode( { 'address': address}, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                handler(results[0].geometry.location);            
+            } else {
+                alert("Geocode was not successful for the following reason: " + status);
+            }  
+        });
+    },   
+
+3. Let's try to add that location as a market
+
+    addMarker : function(place){
+        var latlng = new google.maps.LatLng(place.lat,
+                                            place.lng);
+        var marker = new google.maps.Marker({
+          position: latlng, 
+          map: GeoPin.map, 
+          title: place.name
+        });        
+        
+    },
+    
+4. Let's try to add automatically the markers from the visible list
+
+    loadPlacesMarkers : function(){
+        $(".places li").each(function(){
+            var place = {
+                lat : $(this).attr("place-lat"),
+                lng : $(this).attr("place-lng"),
+                name : $(this).find(".name").html()
+            };
+            GeoPin.addMarker(place);
+        });
+    
+    },
+
+5. Let's create mock functions for the events insert and remove
+
+    
+    $(".btn-insert").click(function(event){
+        
+        var name = $("input[name=place_name]").val();
+        var address = $("input[name=place_address]").val();
+        
+        GeoPin.getAddressCoordinates(address, function(location){
+            
+            GeoPin.insertPlace({
+                place_name : name,
+                place_address : address,
+                place_lat: location.A,
+                place_lng : location.k
+            });
+            
+        });
+    });
+    
+    $(".btn-remove").click(function(event){
+        var id = $(event.currentTarget).attr("rel-place");
+        
+        GeoPin.removePlace({
+            place_id : id
+        });
+        
+    }); 
+    
+
+});
+
+6. Ok, now we implement them for real
+    
+    
+    /* CRUD operations */
+    
+    insertPlace : function(place){     
+        place.option = "insert";
+        $.post("index.php", place).done(function(data){
+            console.log(data);
+        });
+    },
+    
+    removePlace : function(place){     
+        place.option = "remove";
+        $.post("index.php", place).done(function(data){
+            console.log(data);
+        });
+    }    
+    
+};
+

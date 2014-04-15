@@ -1,0 +1,21 @@
+Setting up your sweng account
+=============================
+
+1. Connect to the server via SSH
+user: swengXXX
+pass: <will be given>
+host: didattica.science.unitn.it 
+
+e.g: 
+
+ssh sweng002@didattica.science.unitn.it
+
+2. Let's create our html public_html folder
+
+$ mkdir public_html
+$ chmod 755 public_html
+$ echo "It works" > public_html/index.html
+
+3. Open your folder in the browser
+
+http://didattica.science.unitn.it/~swengXXX/

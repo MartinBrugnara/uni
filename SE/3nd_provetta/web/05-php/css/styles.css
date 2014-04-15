@@ -1,0 +1,18 @@
+body {
+    font-family: "Arial", "Helvetica", "Serif";
+}
+
+
+/* item list */
+.weeks {
+    list-style: none;
+    padding: 0;
+}
+
+.weeks li {
+    background: #efefef;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+

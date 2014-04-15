@@ -1,0 +1,89 @@
+@import url(http://fonts.googleapis.com/css?family=Gafata);
+
+body {
+    font-family: "Gafata", "Helvetica", "Serif";
+    margin: 0px;
+}
+
+/* Header and footer */
+
+header, footer {
+    height: 50px;
+    padding-right: 40px;
+    padding-left: 40px;    
+    background: #242b35;
+}
+
+header .logo {
+    text-decoration: none;
+    font-size: 2.5em;
+    color:white;
+}
+
+header .logo img  {
+    width : 32px;    
+    padding-top: 5px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p{
+    color: white;
+    text-align: center;    
+}
+
+
+/* Controls */
+
+.controls {
+    background: #efefef;;  
+    height: 32px;
+    padding:20px;  
+    position: relative;
+    border-bottom: 1px solid #b4b4b4;
+}
+
+.controls label {
+    color: black;
+    font-size: 1.2em;
+}
+.controls input[type="text"] {
+    height: 24px;
+    width: 100px;    
+    margin-right: 20px;
+    font-size: 1.2em;
+}
+
+.controls .error{
+    color: red;
+}
+
+.controls button {
+    height: 30px;  
+    padding-right: 8px;
+    padding-left: 8px;
+    font-size: 1.2em;
+    
+    background: #242b35;
+    color: white;
+    border: 0;
+}
+
+/* Results */
+
+.results {
+    padding: 10px;
+}
+.results .picture{
+    width: 300px;
+    display: inline-block;
+}
+.results .details{
+    width: 400px;
+    display: inline-block; 
+    vertical-align: top;
+}

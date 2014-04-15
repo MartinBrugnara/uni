@@ -1,0 +1,65 @@
+
+/* controls */
+
+.controls {
+    background: #00c8d7;  
+    height: 52px;
+    padding:20px;     
+}
+
+.controls strong {
+    color: white;
+    font-size: 1.2em;
+}
+.controls input[type="url"] {
+    height: 24px;
+    width: 480px;    
+    font-size: 1.2em;
+}
+
+.controls button {
+    height: 30px;  
+    padding-right: 5px;
+    padding-left: 5px;
+    font-size: 1.2em;
+    
+    background: #242b35;
+    color: white;
+    border: 0;
+}
+
+.controls .pin-type {
+    padding-left: 60px;
+    color: white;
+}
+
+/* pins */
+
+.pinboard {
+    list-style: none;
+    padding-left: 0px;
+    padding-right: 0px;
+    display: inline-block;
+    width: 100%;    
+}
+
+.pinboard li{
+    float: left;
+    width:  25%;    
+}
+
+.pinboard .pin {
+    padding: 8px;
+}
+
+.pinboard li .thumbnail {
+    text-align: center;
+    border: 1px solid #efefef;
+    padding: 2px;
+}
+
+.pinboard li .thumbnail img {
+    width: 100%;
+}
+
+
